@@ -112,9 +112,8 @@ const multiSelected = ref(['A'])
         <label for="john">John</label>
         <input id="mike" v-model="checkedNames" type="checkbox" value="Mike">
         <label for="mike">Mike</label>
-        <p>Checked names:
-          <pre>{{ checkedNames }}</pre>
-        </p>
+        <p>Checked names:</p>
+        <pre>{{ checkedNames }}</pre>
       </div>
 
       <div class="box">
