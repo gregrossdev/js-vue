@@ -1,5 +1,6 @@
 <script setup>
 import {ref} from 'vue'
+import TodoItem from './components/TodoItem.vue'
 
 const message = ref('Hello World!')
 
@@ -36,6 +37,13 @@ const checkedNames = ref(['Jack'])
 const picked = ref('One')
 const selected = ref('A')
 const multiSelected = ref(['A'])
+
+// Simple Component
+const groceryList = ref([
+  {id: 0, text: 'Vegetables'},
+  {id: 1, text: 'Cheese'},
+  {id: 2, text: 'Whatever else humans are supposed to eat'}
+])
 
 </script>
 
@@ -147,9 +155,19 @@ const multiSelected = ref(['A'])
         </select>
         <span>Selected: {{ multiSelected }}</span>
       </div>
-
     </section>
 
+    <!--    // Simple Component-->
+    <section>
+      <h2>Todo Item Component</h2>
+      <ol>
+        <TodoItem
+            v-for="groceryItem in groceryList"
+            :key="groceryItem.id"
+            :item="groceryItem"
+        />
+      </ol>
+    </section>
   </main>
 </template>
 
